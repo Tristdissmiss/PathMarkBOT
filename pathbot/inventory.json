@@ -1,10 +1,4 @@
-import React, { useState } from 'react';
-import Header from './components/Header';
-import SearchBar from './components/SearchBar';
-import Results from './components/Results';
-import VoiceButton from './components/VoiceButton';
-
-const inventory = {
+{
     "Bakery": {
         "bread":{  
             "Fresh Brioche Bread": "Aisle 1",
@@ -14,13 +8,12 @@ const inventory = {
             "Fresh Challah Bread":"Aisle 1",
             "Fresh Italian Bread": "Aisle 1 /By the door",  
             "Fresh Medium 2pk Italian Bread": "Aisle 1 /By the door",   
-            "Fresh Wheat Italian Bread": "Aisle 1 /By the door",
-            "Fresh Baguette Bread": "Aisle 1 /By the door", 
+            "Fresh Wheat Italian Bread": "Aisle 1 /By the door", 
             "Fresh Wheat Baguette Bread": "Aisle 1 /By the door",
             "Fresh French/ Artisan Baguette Bread": "Aisle 1 /By the door", 
             "Fresh Baguette Bread": "Aisle 1 /By the door", 
             "Fresh Garlic Bread": "Aisle 1 /By the door",
-            "Fresh Wheat Garlic Bread": "Aisle 1 /By the door",
+            "Fresh Wheat Garlic Bread": "Aisle 1 /By the door"
     
         },
         "cake": "Aisle 1",
@@ -46,8 +39,8 @@ const inventory = {
             "Fresh Wheat Bagels": "Aisle 1",
             "Fresh Onion Bagels": "Aisle 1",
             "Fresh Pumpernickle Bagels": "Aisle 1", 
-            "Fresh Frenchtoast Bagels": "Aisle 1",
-        }, 
+            "Fresh Frenchtoast Bagels": "Aisle 1"
+        }
     },
     "Produce": { 
         "fruit":{
@@ -59,7 +52,7 @@ const inventory = {
         "Coconut": "Aisle 1",
         "Mango": "Aisle 1",
         "Strawberry": "Aisle 1",
-        "Dragon fruit": "Aisle 1",
+        "Dragon fruit": "Aisle 1"
         },
         
         "vegetables":{ 
@@ -72,10 +65,10 @@ const inventory = {
             "potatoes": "Aisle 1", 
             "yams":{  
                 "purple yams": "Aisle 1", 
-                "white yams": "Aisle 1", 
+                "white yams": "Aisle 1" 
             }, 
             "zucchini": "Aisle 1", 
-            "cucumber": "Aisle 1", 
+            "cucumber": "Aisle 1"
         }
     },
     "Meat/Poultry": {
@@ -87,7 +80,7 @@ const inventory = {
         "chicken thighs": "Aisle 1",
         "pig feet": "Aisle 1", 
         "Ground turkey": "Aisle 1", 
-        "Lamb": "Aisle 1", 
+        "Lamb": "Aisle 1" 
         },    
     "Grace Products": "Aisle 2",  
     "Finest Corn Meal": "Aisle 2", 
@@ -113,8 +106,8 @@ const inventory = {
         "Canned Peaches": "Aisle 5", 
         "Canned Pineapple": "Aisle 5",
         "Canned Mandrines ": "Aisle 5", 
-        "Fruit Cocktail": "Aisle 5", 
-    }, 
+        "Fruit Cocktail": "Aisle 5" 
+    },
     "Peanut Butter": "Aisle 5", 
     "Jelly": "Aisle 5", 
     "Tea": "Aisle 5", 
@@ -131,7 +124,7 @@ const inventory = {
         "Oreos": "Aisle 6",
         "Nutterbutter": "Aisle 6", 
         "Chip ahoy Choclate chip": "Aisle 6", 
-        "Chips ahoy chewy choclate chip": "Aisle 6",
+        "Chips ahoy chewy choclate chip": "Aisle 6"
     },
     "Juice": "Aisle 7", 
     "Organic Juice": "Aisle 7", 
@@ -179,7 +172,7 @@ const inventory = {
     "Diary": {
         "milk": "Aisle 13",
         "cheese": "Aisle 13",
-        "yogurt": "Aisle 13",
+        "yogurt": "Aisle 13"
     },
     "beer": "Aisle 13", 
     "seltzer": "Aisle 13", 
@@ -187,33 +180,4 @@ const inventory = {
     "ice": "Aisle 13", 
     "Alcohol": "Aisle 13", 
     "Deli": "Back of the store" 
-}; 
-
-const App = () => {
-    const [results, setResults] = useState(null);
-
-    const searchInventory = (item) => {
-        for (const category in inventory) {
-            if (inventory[category][item]) {
-                setResults(`${item} is located in ${inventory[category][item]}`);
-                return;
-            }
-        }
-        setResults('Item not found.');
-    };
-
-    const handleVoiceInput = () => {
-        alert('Voice input not implemented yet!');
-    };
-
-    return (
-        <div>
-            <Header />
-            <SearchBar onSearch={searchInventory} />
-            <VoiceButton onVoiceInput={handleVoiceInput} />
-            <Results results={results} />
-        </div>
-    );
-};
-
-export default App;
+}
